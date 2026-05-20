@@ -7,7 +7,7 @@ import CTASection from "@/components/landing/CTASection";
 import Navbar from "@/components/landing/NavBarSection";
 import FeaturedCourses from "@/components/landing/FeaturedCourses";  
 
-const BACKEND_URL = !!process.env.VERCEL_ENV ? process.env.NEXT_PUBLIC_BACKEND_URL : "http://localhost:4000";
+const BACKEND_URL = !!process.env.NEXT_PUBLIC_VERCEL_ENV ? process.env.NEXT_PUBLIC_BACKEND_URL : "http://localhost:4000";
 
 
 async function getCourses() {
