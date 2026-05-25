@@ -1,6 +1,6 @@
 
 
-import CourseCard from "../courses/CourseCard";
+import CourseCard from "./CourseCard";
 
 // 1. Definimos la interfaz para un curso individual
 interface Course {
@@ -8,6 +8,7 @@ interface Course {
   title: string;
   thumbnail: string;
   description: string;
+  isFeatured: boolean;
   topics: string[];
 }
 
@@ -47,16 +48,19 @@ export default function FeaturedCourses({ courses }: FeaturedCoursesProps) {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            {courses.map(course => (
+          {courses.map(course => (
+            course.isFeatured && (
               <CourseCard
                 key={course._id}
                 _id={course._id}
                 title={course.title}
                 thumbnail={course.thumbnail}
                 description={course.description}
+                isFeatured={course.isFeatured}
                 topics={course.topics}
               />
-            ))}
+            )
+          ))}
 
         </div>
 
