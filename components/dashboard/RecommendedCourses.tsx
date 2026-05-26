@@ -3,6 +3,7 @@ from "./DashboardCourseCard";
 
 interface Course {
   _id: string;
+  slug: string;
   title: string;
   thumbnail: string;
   description: string;
