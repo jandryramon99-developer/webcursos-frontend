@@ -11,4 +11,7 @@ export const authClient =
 
     baseURL:
       process.env.NEXT_PUBLIC_API_URL!,
+    fetchOptions: {
+        credentials: "include", // ¡OBLIGATORIO para enviar/recibir cookies cross-domain!
+    }
   });
