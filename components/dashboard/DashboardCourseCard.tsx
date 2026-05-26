@@ -10,6 +10,8 @@ interface Props {
 
     title: string;
 
+    slug: string;
+
     description: string;
 
     thumbnail: string;
@@ -75,7 +77,7 @@ export default function DashboardCourseCard({
         {/* BUTTON */}
 
         <Link
-          href={`/courses/${course._id}`}
+          href={`/courses/${course.slug}`}
           className="mt-6 inline-flex bg-indigo-600 hover:bg-indigo-500 transition px-5 py-3 rounded-2xl font-medium text-white"
         >
 
