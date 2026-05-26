@@ -2,7 +2,8 @@ import Link from 'next/dist/client/link';
 import Image from 'next/image'
 
 interface CourseCardProps {
-  _id: string;
+  _id?: string;
+  slug: string;
   title: string;
   thumbnail: string;
   description: string;
@@ -10,10 +11,9 @@ interface CourseCardProps {
   topics: string[]; // Agregamos el campo de temas para mostrar la cantidad en la tarjeta
 }
 
-export default function CourseCard({ _id, title, thumbnail, description, isFeatured, topics }: CourseCardProps) {
+export default function CourseCard({slug, title, thumbnail, description, isFeatured, topics }: CourseCardProps) {
   return (
-    <Link
-      href={`/courses/${_id}`}
+    <div
       className="group bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-indigo-500/40 transition"
     >
 
@@ -66,16 +66,18 @@ export default function CourseCard({ _id, title, thumbnail, description, isFeatu
 
           </div>
 
-          <button className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 transition rounded-xl text-sm font-medium text-white">
+          <Link 
+          href={`/courses/${slug}`}
+          className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 transition rounded-xl text-sm font-medium text-white">
 
             Ver curso
 
-          </button>
+          </Link>
 
         </div>
 
       </div>
 
-    </Link>
+    </div>
   );
 }

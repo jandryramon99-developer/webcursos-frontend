@@ -5,6 +5,7 @@ import CourseCard from "./CourseCard";
 // 1. Definimos la interfaz para un curso individual
 interface Course {
   _id: string;
+  slug: string;
   title: string;
   thumbnail: string;
   description: string;
@@ -52,7 +53,7 @@ export default function FeaturedCourses({ courses }: FeaturedCoursesProps) {
             course.isFeatured && (
               <CourseCard
                 key={course._id}
-                _id={course._id}
+                slug={course.slug}
                 title={course.title}
                 thumbnail={course.thumbnail}
                 description={course.description}

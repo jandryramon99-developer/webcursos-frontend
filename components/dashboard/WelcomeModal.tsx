@@ -46,13 +46,18 @@ export default function WelcomeModal({
     | SHOW MODAL
     |--------------------------------------------------------------------------
     */
-
-    Swal.fire({
+    const formattedName = userName
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+    
+      Swal.fire({
 
       icon: "success",
 
       title:
-        `Bienvenido ${userName} 👋`,
+        `Bienvenido ${formattedName} 👋`,
 
       html: `
         <div style="line-height:1.7; margin-top:10px;">
