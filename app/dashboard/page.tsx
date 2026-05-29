@@ -27,8 +27,15 @@ import VerifyEmailBanner from "@/components/dashboard/VerifyEmailBanner";
 */
 
 export default async function DashboardPage() {
+  const cookieStore =
+  await cookies();
 
-  const cookieStore = await cookies();
+  console.log(
+    "ALL COOKIES:",
+    cookieStore.getAll()
+  );
+
+  //const cookieStore = await cookies();
   const cookieHeader = cookieStore.toString(); 
 
   const user =
