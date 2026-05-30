@@ -12,6 +12,7 @@ from "@/lib/auth-client";
 import Image from "next/image";
 
 
+
 /*
 |--------------------------------------------------------------------------
 | DASHBOARD HEADER
@@ -75,6 +76,7 @@ export default function DashboardHeader(){
           );
 
           router.replace("/login");
+
         } finally {
 
           setLoading(false);
