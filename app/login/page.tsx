@@ -21,6 +21,7 @@ import {
 import { authClient } from "@/lib/auth-client";
 
 import api from "@/lib/axios";
+import router from "next/dist/shared/lib/router/router";
 
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +36,7 @@ export default function LoginPage() {
   | ROUTER
   |--------------------------------------------------------------------------
   */
-
-  const router =
-    useRouter();
-
+  const router = useRouter();
   /*
   |--------------------------------------------------------------------------
   | STATES
@@ -360,7 +358,7 @@ console.log(
             });
           }
       
-
+          router.push("/dashboard");
           
 
         } catch (error) {
