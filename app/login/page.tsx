@@ -263,7 +263,15 @@ export default function LoginPage() {
               password:
                 formData.password,
             });
+console.log(
+  "LOGIN DATA:",
+  data
+);
 
+console.log(
+  "LOGIN ERROR:",
+  error
+);
           /*
           |--------------------------------------------------------------------------
           | LOGIN ERROR
