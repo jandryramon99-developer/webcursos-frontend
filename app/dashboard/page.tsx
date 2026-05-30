@@ -7,14 +7,15 @@ import UserSidebar from "@/components/dashboard/UserSidebar";
 
 import MobileSidebar from "@/components/dashboard/MobileSidebar";
 
-//import WelcomeModal from "@/components/dashboard/WelcomeModal";
+import WelcomeModal from "@/components/dashboard/WelcomeModal";
 
-
+import { authClient } from "@/lib/auth-client";
+import { redirect } from "next/navigation";
 import { getCourses }
 from "@/services/course.service";
 import RecommendedCourses from "@/components/dashboard/RecommendedCourses";
 
-//import VerifyEmailBanner from "@/components/dashboard/VerifyEmailBanner";
+import VerifyEmailBanner from "@/components/dashboard/VerifyEmailBanner";
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,16 @@ import RecommendedCourses from "@/components/dashboard/RecommendedCourses";
 export default async function DashboardPage() {
 
   const courses = await getCourses();
+   const session =
+    await authClient.getSession();
+
+  if (!session?.data?.user) {
+
+    redirect("/login");
+  }
+
+  const user =
+    session.data.user;
   
   return (
 
@@ -45,18 +56,18 @@ export default async function DashboardPage() {
         <section className="flex-1 min-h-screen pt-28 lg:pt-10 p-6 lg:p-10">
 
           {/* HEADER */}
-          {/* {
+          {
             !user.emailVerified && (
 
               <VerifyEmailBanner
                 email={user.email}
               />
             )
-          } */}
+          }
           <DashboardHeader/>
-          {/* <WelcomeModal
+          <WelcomeModal
             userName={user.name}
-          /> */}
+          />
           {/* STATS */}
 
           <DashboardStats />
