@@ -57,29 +57,26 @@ export default function DashboardHeader(){
             "SESSION:",
             session
           );
+
+         
           if (
             !session?.data?.user
           ) {
 
-            router.replace(
-              "/login"
-            );
+            setLoading(false);
 
             return;
           }
-
-          setUser(
-            session.data.user
-          );
+          setUser(session.data.user);
 
         } catch (error) {
 
           console.error(
-            "SESSION ERROR:",
-            error
+          "SESSION ERROR:",
+          error
           );
 
-          router.replace("/login");
+          setLoading(false);
 
         } finally {
 
