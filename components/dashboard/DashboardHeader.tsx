@@ -1,29 +1,103 @@
+"use client";
+
+import { useEffect, useState }
+from "react";
+
+import { useRouter }
+from "next/navigation";
+
+import { authClient }
+from "@/lib/auth-client";
+
 import Image from "next/image";
-interface Props {
+import error from "next/dist/api/error";
 
-  user: {
-
-    name?: string;
-
-    email?: string;
-
-    image?: string;
-
-  } | null;
-}
 
 /*
 |--------------------------------------------------------------------------
 | DASHBOARD HEADER
 |--------------------------------------------------------------------------
 */
+type UserType = {
 
-export default function DashboardHeader({
+  name?: string;
 
-  user,
+  email?: string;
 
-}: Props) {
+  image?: string | null;
+};
+export default function DashboardHeader(){
 
+
+  const router =
+    useRouter();
+
+  
+  const [user, setUser] =
+    useState<UserType | null>(null);
+
+  const [loading, setLoading] =
+    useState(true);
+
+  useEffect(() => {
+
+    const loadSession =
+      async () => {
+
+        try {
+
+          const session =
+            await authClient
+              .getSession();
+          console.log(
+            "SESSION:",
+            session
+          );
+          if (
+            !session?.data?.user
+          ) {
+
+            router.replace(
+              "/login"
+            );
+
+            return;
+          }
+
+          setUser(
+            session.data.user
+          );
+
+        } catch {
+          console.error(
+          "SESSION ERROR:",
+          error
+          );
+          router.replace(
+            "/login"
+          );
+
+        } finally {
+
+          setLoading(false);
+        }
+      };
+
+    loadSession();
+
+  }, [router]);
+
+if (loading) {
+
+  return (
+
+    <div className="animate-pulse">
+
+      Cargando...
+
+    </div>
+  );
+}
   return (
 
     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
