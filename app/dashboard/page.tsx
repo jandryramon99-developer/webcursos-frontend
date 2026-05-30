@@ -7,13 +7,13 @@ import UserSidebar from "@/components/dashboard/UserSidebar";
 
 import MobileSidebar from "@/components/dashboard/MobileSidebar";
 
-import WelcomeModal from "@/components/dashboard/WelcomeModal";
+
 
 import { getCourses }
 from "@/services/course.service";
 import RecommendedCourses from "@/components/dashboard/RecommendedCourses";
 
-import VerifyEmailBanner from "@/components/dashboard/VerifyEmailBanner";
+
 
 /*
 |--------------------------------------------------------------------------

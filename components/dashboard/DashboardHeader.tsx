@@ -11,6 +11,8 @@ from "@/lib/auth-client";
 
 import Image from "next/image";
 
+import VerifyEmailBanner from "./VerifyEmailBanner";
+
 
 
 /*
@@ -25,6 +27,8 @@ type UserType = {
   email?: string;
 
   image?: string | null;
+
+  emailVerified?: boolean;
 };
 export default function DashboardHeader(){
 
@@ -102,6 +106,16 @@ if (loading) {
 
     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
 
+      {
+        user &&
+        !user.emailVerified && (
+
+          <VerifyEmailBanner
+            email={user.email || ""}
+          />
+
+        )
+      }
       <div>
 
         <h1 className="capitalize text-4xl font-black text-white">
