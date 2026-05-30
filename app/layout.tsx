@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BGU Academy",
-  description: "Aprende nuevas habilidades con nuestros cursos en línea. ¡Únete a nuestra comunidad de aprendizaje hoy!",
+  title: "DigiPRO",
+  description: "Explora cursos, plantillas, ebooks, recursos profesionales, herramientas digitales y mucho más. Encuentra contenido de calidad creado para estudiantes, emprendedores y profesionales.",
 };
 
 export default function RootLayout({

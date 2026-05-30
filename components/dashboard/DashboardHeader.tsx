@@ -10,7 +10,6 @@ import { authClient }
 from "@/lib/auth-client";
 
 import Image from "next/image";
-import error from "next/dist/api/error";
 
 
 /*
@@ -68,15 +67,14 @@ export default function DashboardHeader(){
             session.data.user
           );
 
-        } catch {
+        } catch (error) {
+
           console.error(
-          "SESSION ERROR:",
-          error
-          );
-          router.replace(
-            "/login"
+            "SESSION ERROR:",
+            error
           );
 
+          router.replace("/login");
         } finally {
 
           setLoading(false);
