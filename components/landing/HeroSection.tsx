@@ -9,7 +9,7 @@ export default function HeroSection() {
       Hero principal landing.
     */
 
-    <section className="relative overflow-hidden py-20 lg:py-28">
+    <section className="relative overflow-hidden py-20 lg:py-22">
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
 
@@ -19,24 +19,23 @@ export default function HeroSection() {
 
           <span className="bg-indigo-500/20 text-indigo-300 px-4 py-2 rounded-full text-sm">
 
-            Aprende sin límites
+            🚀 Productos digitales para potenciar tu crecimiento
 
           </span>
 
           <h1 className="mt-6 text-5xl md:text-6xl font-black leading-tight text-white">
 
-            Aprende con los
+            Tu mundo digital
             <span className="text-indigo-500">
-              {" "}mejores cursos{" "}
+              {" "}comienza{" "}
             </span>
-            en línea
+            aquí.
 
           </h1>
 
           <p className="mt-6 text-zinc-400 text-lg leading-relaxed max-w-xl">
 
-            Plataforma educativa enfocada en estudiantes de Bachillerato General Unificado.
-
+            Explora cursos, plantillas, ebooks, recursos profesionales, herramientas digitales y mucho más. Encuentra contenido de calidad creado para estudiantes, emprendedores y profesionales.
           </p>
 
           {/* BOTONES */}
@@ -47,7 +46,7 @@ export default function HeroSection() {
               href="/courses"
               className="bg-indigo-600 hover:bg-indigo-500 transition px-8 py-4 rounded-2xl font-semibold text-center text-white"
             >
-              Ver cursos
+              Explorar productos
             </Link>
 
             <Link

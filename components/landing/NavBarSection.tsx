@@ -16,17 +16,17 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center font-bold text-white">
-            B
+            D
           </div>
           <div>
-            <h1 className="font-bold text-lg text-white">BGU Academy</h1>
+            <h1 className="font-bold text-lg text-white">DigiPro</h1>
           </div>
         </Link>
 
         {/* MENÚ ESCRITORIO */}
         <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-300">
           <Link href="/" className="hover:text-white transition">Inicio</Link>
-          <Link href="/courses" className="hover:text-white transition">Cursos</Link>
+          <Link href="/courses" className="hover:text-white transition">Productos</Link>
           <Link href="/about" className="hover:text-white transition">Nosotros</Link>
         </nav>
 

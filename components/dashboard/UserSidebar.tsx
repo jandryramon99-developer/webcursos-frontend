@@ -66,7 +66,7 @@ export default function UserSidebar() {
         />
 
         <SidebarItem
-          href="/dashboard/courses"
+          href="/courses"
           icon={<ShoppingBag size={20} />}
           label="Explorar Cursos"
           active={
