@@ -3,9 +3,6 @@
 import { useEffect, useState }
 from "react";
 
-import { useRouter }
-from "next/navigation";
-
 import { authClient }
 from "@/lib/auth-client";
 
@@ -31,10 +28,6 @@ type UserType = {
   emailVerified?: boolean;
 };
 export default function DashboardHeader(){
-
-
-  const router =
-    useRouter();
 
   
   const [user, setUser] =
@@ -86,7 +79,7 @@ export default function DashboardHeader(){
 
     loadSession();
 
-  }, [router]);
+  }, []);
 
 if (loading) {
 
