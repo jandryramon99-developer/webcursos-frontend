@@ -339,7 +339,7 @@ console.log(
                   </p>
 
                   <p style="margin-top:10px;">
-                    Algunas funciones premium estarán bloqueadas
+                    Puedes seguir explorando la plataforma, pero algunas funciones premium estarán bloqueadas
                     hasta verificar tu correo.
                   </p>
 

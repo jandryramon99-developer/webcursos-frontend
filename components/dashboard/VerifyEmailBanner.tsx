@@ -107,9 +107,8 @@ export default function VerifyEmailBanner({
 
           <p className="text-zinc-300 mt-2">
 
-            Debes verificar tu cuenta para desbloquear
-            todas las funcionalidades premium
-            de la plataforma.
+            Tu correo electrónico aún no ha sido verificado.
+            Verifica tu cuenta para desbloquear todas las funciones de DigiPro.
 
           </p>
 
@@ -122,7 +121,7 @@ export default function VerifyEmailBanner({
           className="cursor-pointer bg-yellow-500 hover:bg-yellow-400 transition text-black font-semibold px-6 py-3 rounded-2xl"
         >
 
-          Reenviar correo
+          Enviar correo de verificación
 
         </button>
 

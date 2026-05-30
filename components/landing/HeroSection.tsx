@@ -17,7 +17,7 @@ export default function HeroSection() {
 
         <div>
 
-          <span className="bg-indigo-500/20 text-indigo-300 px-4 py-2 rounded-full text-sm">
+          <span className="bg-indigo-500/20 text-indigo-300 px-4 py-2 rounded-full text-xs">
 
             🚀 Productos digitales para potenciar tu crecimiento
 
