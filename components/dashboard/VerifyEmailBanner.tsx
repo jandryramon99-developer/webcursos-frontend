@@ -121,7 +121,7 @@ export default function VerifyEmailBanner({
           className="cursor-pointer bg-yellow-500 hover:bg-yellow-400 transition text-black font-semibold px-6 py-3 rounded-2xl"
         >
 
-          Enviar correo de verificación
+          Verificar mi correo
 
         </button>
 
