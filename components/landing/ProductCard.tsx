@@ -1,17 +1,37 @@
 import Link from 'next/dist/client/link';
-import Image from 'next/image'
+import Image from 'next/image';
 
-interface CourseCardProps {
-  _id?: string;
+interface ProductCardProps {
+
   slug: string;
+
   title: string;
+
   thumbnail: string;
+
   description: string;
+
+  price: number;
+
   isFeatured: boolean;
-  topics: string[]; // Agregamos el campo de temas para mostrar la cantidad en la tarjeta
+
+  category?: {
+
+    _id: string;
+
+    title: string;
+
+    slug: string;
+  },
+  topics: {
+
+    _id: string;
+    title: string;
+  }[];
+
 }
 
-export default function CourseCard({slug, title, thumbnail, description, isFeatured, topics }: CourseCardProps) {
+export default function ProductCard({slug, title, thumbnail, description, isFeatured, topics }: ProductCardProps) {
   return (
     <div
       className="group bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-indigo-500/40 transition"
@@ -39,7 +59,7 @@ export default function CourseCard({slug, title, thumbnail, description, isFeatu
         {isFeatured && (
           <span className="bg-indigo-500/20 text-indigo-300 text-xs px-3 py-1 rounded-full">
 
-            Curso Destacado
+            Producto Destacado
 
           </span>
         )}
@@ -67,10 +87,10 @@ export default function CourseCard({slug, title, thumbnail, description, isFeatu
           </div>
 
           <Link 
-          href={`/courses/${slug}`}
+          href={`/products/${slug}`}
           className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 transition rounded-xl text-sm font-medium text-white">
 
-            Ver curso
+            Ver producto
 
           </Link>
 

@@ -1,26 +1,19 @@
-// app/courses/page.tsx
 
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
 
-import CourseGrid from "@/components/courses/CourseGrid";
+import ProductGrid from "@/components/products/ProductGrid";
 
-import CourseSearch from "@/components/courses/CourseSearch";
+import ProductSearch from "@/components/products/ProductSearch";
 
-import CourseFilters from "@/components/courses/CourseFilters";
+import ProductFilters from "@/components/products/ProductFilters";
 
-import EmptyCourses from "@/components/courses/EmptyCourses";
+import EmptyProducts from "@/components/products/EmptyProducts";
 
-import { getCourses } from "@/services/course.service";
+import { getProducts } from "@/services/product.service";
 
-/*
-|--------------------------------------------------------------------------
-| TYPES
-|--------------------------------------------------------------------------
-*/
-
-interface Course {
+interface product {
 
   _id: string;
 
@@ -52,7 +45,7 @@ interface Course {
 |--------------------------------------------------------------------------
 */
 
-export default function CoursesPage() {
+export default function ProductsPage() {
 
   /*
   |--------------------------------------------------------------------------
@@ -60,8 +53,8 @@ export default function CoursesPage() {
   |--------------------------------------------------------------------------
   */
 
-  const [courses, setCourses] =
-    useState<Course[]>([]);
+  const [products, setProducts] =
+    useState<product[]>([]);
 
   const [loading, setLoading] =
     useState(true);
@@ -80,15 +73,15 @@ export default function CoursesPage() {
 
   useEffect(() => {
 
-    const fetchCourses =
+    const fetchProducts =
       async () => {
 
         try {
 
           const data =
-            await getCourses();
+            await getProducts();
 
-          setCourses(data);
+          setProducts(data);
 
         } catch (error) {
 
@@ -100,7 +93,7 @@ export default function CoursesPage() {
         }
       };
 
-    fetchCourses();
+    fetchProducts();
 
   }, []);
 
@@ -116,10 +109,10 @@ export default function CoursesPage() {
       const unique =
         new Set(
 
-          courses
+          products
             .map(
-              (course) =>
-                course.category?.title
+              (product) =>
+                product.category?.title
             )
             .filter(
                 (title): title is string =>
@@ -135,21 +128,21 @@ export default function CoursesPage() {
         ...Array.from(unique),
       ];
 
-    }, [courses]);
+    }, [products]);
 
   /*
   |--------------------------------------------------------------------------
-  | FILTERED COURSES
+  | FILTERED PRODUCTS
   |--------------------------------------------------------------------------
   */
 
-  const filteredCourses =
+  const filteredProducts =
     useMemo(() => {
 
-      return courses.filter((course) => {
+      return products.filter((product) => {
 
         const matchSearch =
-          course.title
+          product.title
             .toLowerCase()
             .includes(
               search.toLowerCase()
@@ -160,7 +153,7 @@ export default function CoursesPage() {
 
             ? true
 
-            : course.category?.title ===
+            : product.category?.title ===
               selectedCategory;
 
         return (
@@ -170,7 +163,7 @@ export default function CoursesPage() {
       });
 
     }, [
-      courses,
+      products,
       search,
       selectedCategory,
     ]);
@@ -191,19 +184,18 @@ export default function CoursesPage() {
 
             <span className="inline-flex px-4 py-2 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-sm font-medium">
 
-              Plataforma educativa
-
+              DigiPro - Plataforma de productos digitales
             </span>
 
             <h1 className="mt-6 text-4xl lg:text-5xl font-black tracking-tight leading-tight">
 
-              Explora todos nuestros cursos
+              Explora todos nuestros productos
 
             </h1>
 
             <p className="mt-6 text-zinc-400 text-lg leading-relaxed">
 
-              Aprende con cursos modernos, dinámicos y diseñados para potenciar tu conocimiento.
+              Descubre cursos, plantillas, ebooks, herramientas y recursos digitales diseñados para ayudarte a aprender, crear y crecer.
 
             </p>
 
@@ -219,14 +211,14 @@ export default function CoursesPage() {
 
         {/* SEARCH */}
 
-        <CourseSearch
+        <ProductSearch
           value={search}
           onChange={setSearch}
         />
 
         {/* FILTERS */}
 
-        <CourseFilters
+        <ProductFilters
           categories={categories}
           selectedCategory={selectedCategory}
           onSelect={setSelectedCategory}
@@ -240,13 +232,13 @@ export default function CoursesPage() {
 
             <h2 className="text-2xl font-bold">
 
-              Cursos disponibles
+              Productos disponibles
 
             </h2>
 
             <p className="text-zinc-400 mt-1">
 
-              {filteredCourses.length} cursos encontrados
+              {filteredProducts.length} productos encontrados
 
             </p>
 
@@ -263,18 +255,18 @@ export default function CoursesPage() {
 
               <p className="text-zinc-400">
 
-                Cargando cursos...
+                Cargando productos...
 
               </p>
 
-            ) : filteredCourses.length === 0 ? (
+            ) : filteredProducts.length === 0 ? (
 
-              <EmptyCourses />
+              <EmptyProducts />
 
             ) : (
 
-              <CourseGrid
-                courses={filteredCourses}
+              <ProductGrid
+                products={filteredProducts}
               />
             )
           }

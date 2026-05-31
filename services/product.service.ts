@@ -2,20 +2,20 @@ import api from "@/lib/axios";
 
 /*
 |--------------------------------------------------------------------------
-| GET COURSES
+| GET PRODUCTS
 |--------------------------------------------------------------------------
 */
 
-export const getCourses =
+export const getProducts =
   async () => {
 
     const response =
-      await api.get("/api/courses");
+      await api.get("/api/products");
 
     return response.data;
 };
 
-export const getCourseBySlug =
+export const getProductBySlug =
   async (
     slug: string
   ) => {
@@ -23,7 +23,7 @@ export const getCourseBySlug =
     const response =
       await api.get(
 
-        `/api/courses/${slug}`
+        `/api/products/${slug}`
       );
 
     return response.data;

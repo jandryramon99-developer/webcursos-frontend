@@ -10,7 +10,7 @@ import MobileSidebar from "@/components/dashboard/MobileSidebar";
 
 
 import { getCourses }
-from "@/services/course.service";
+from "@/services/product.service";
 import RecommendedCourses from "@/components/dashboard/RecommendedCourses";
 
 

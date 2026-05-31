@@ -26,7 +26,7 @@ export default function Navbar() {
         {/* MENÚ ESCRITORIO */}
         <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-300">
           <Link href="/" className="hover:text-white transition">Inicio</Link>
-          <Link href="/courses" className="hover:text-white transition">Productos</Link>
+          <Link href="/products" className="hover:text-white transition">Productos</Link>
           <Link href="/about" className="hover:text-white transition">Nosotros</Link>
         </nav>
 
@@ -60,7 +60,7 @@ export default function Navbar() {
       <div className={`md:hidden bg-black/95 border-b border-white/10 transition-all duration-300 ease-in-out ${isOpen ? "max-h-screen opacity-100 py-4" : "max-h-0 opacity-0 overflow-hidden"}`}>
         <nav className="flex flex-col px-6 gap-4 text-base text-zinc-300">
           <Link href="/" onClick={() => setIsOpen(false)} className="hover:text-white transition py-2">Inicio</Link>
-          <Link href="/courses" onClick={() => setIsOpen(false)} className="hover:text-white transition py-2">Cursos</Link>
+          <Link href="/products" onClick={() => setIsOpen(false)} className="hover:text-white transition py-2">Productos</Link>
           <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-white transition py-2">Nosotros</Link>
           <hr className="border-white/10 my-2 sm:hidden" />
           <Link href="/login" onClick={() => setIsOpen(false)} className="sm:hidden text-zinc-300 hover:text-white text-center py-2">
