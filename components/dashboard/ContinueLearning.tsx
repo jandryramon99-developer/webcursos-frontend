@@ -1,18 +1,10 @@
-import DashboardCourseCard
-from "./DashboardProductCard";
+import DashboardProductCard from "./DashboardProductCard";
 
-interface Course {
-  _id: string;
-  slug: string;
-  title: string;
-  thumbnail: string;
-  description: string;
-  isFeatured: boolean;
-  topics: string[];
-}
+import { Product } from "@/types/product";
 
 interface Props {
-  courses: Course[];
+
+  products: Product[];
 }
 
 /*
@@ -23,7 +15,7 @@ interface Props {
 
 export default function ContinueLearning({
 
-  courses,
+  products,
 
 }: Props) {
 
@@ -49,11 +41,11 @@ export default function ContinueLearning({
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
 
-        {courses.map((course) => (
+        {products.map((product) => (
 
-          <DashboardCourseCard
-            key={course._id}
-            course={course}
+          <DashboardProductCard
+            key={product._id}
+            product={product}
           />
         ))}
 
