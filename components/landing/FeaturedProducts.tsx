@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
 
-import { Product } from "@/app/types/product";
+import { Product } from "@/types/product";
 
 interface FeaturedProductsProps {
   products: Product[];

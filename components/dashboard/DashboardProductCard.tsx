@@ -2,36 +2,22 @@ import Image from "next/image";
 
 import Link from "next/link";
 
+import { Product } from "@/types/product";
+
 interface Props {
 
-  course: {
-
-    _id: string;
-
-    title: string;
-
-    slug: string;
-
-    description: string;
-
-    thumbnail: string;
-
-    category?: {
-
-      title: string;
-    };
-  };
+  product: Product;
 }
 
 /*
 |--------------------------------------------------------------------------
-| DASHBOARD COURSE CARD
+| DASHBOARD PRODUCT CARD
 |--------------------------------------------------------------------------
 */
 
-export default function DashboardCourseCard({
+export default function DashboardProductCard({
 
-  course,
+  product,
 
 }: Props) {
 
@@ -44,8 +30,8 @@ export default function DashboardCourseCard({
       <div className="relative aspect-video">
 
         <Image
-          src={course.thumbnail}
-          alt={course.title}
+          src={product.thumbnail}
+          alt={product.title}
           fill
           className="object-cover"
         />
@@ -58,26 +44,26 @@ export default function DashboardCourseCard({
 
         <span className="px-3 py-1 rounded-full bg-indigo-600/20 text-indigo-400 text-sm">
 
-          {course.category?.title || "Sin categoría"}
+          {product.category?.title || "Sin categoría"}
 
         </span>
 
         <h3 className="text-2xl font-bold text-white mt-4">
 
-          {course.title}
+          {product.title}
 
         </h3>
 
         <p className="text-zinc-400 mt-3">
 
-          {course.description}
+          {product.description}
 
         </p>
 
         {/* BUTTON */}
 
         <Link
-          href={`/products/${course.slug}`}
+          href={`/products/${product.slug}`}
           className="mt-6 inline-flex bg-indigo-600 hover:bg-indigo-500 transition px-5 py-3 rounded-2xl font-medium text-white"
         >
 

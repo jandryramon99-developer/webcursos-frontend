@@ -1,5 +1,5 @@
 import DashboardCourseCard
-from "./DashboardCourseCard";
+from "./DashboardProductCard";
 
 interface Course {
   _id: string;
