@@ -9,9 +9,9 @@ import MobileSidebar from "@/components/dashboard/MobileSidebar";
 
 
 
-import { getCourses }
-from "@/services/product.service";
-import RecommendedCourses from "@/components/dashboard/RecommendedCourses";
+import { getProducts} from "@/services/product.service";
+
+import RecommendedProducts from "@/components/dashboard/RecommendedProducts";
 
 
 
@@ -23,7 +23,7 @@ import RecommendedCourses from "@/components/dashboard/RecommendedCourses";
 
 export default async function DashboardPage() {
 
-  const courses = await getCourses();
+  const products = await getProducts();
   
   
   return (
@@ -89,8 +89,8 @@ export default async function DashboardPage() {
             </div> */}
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
 
-              <RecommendedCourses
-                courses={courses}
+              <RecommendedProducts
+                products={products}
               />
 
             </div>
