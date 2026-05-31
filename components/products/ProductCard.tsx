@@ -6,7 +6,7 @@ import { Star } from "lucide-react";
 
 interface Props {
 
-  course: {
+  product: {
 
     _id: string;
 
@@ -29,9 +29,9 @@ interface Props {
   };
 }
 
-export default function CourseCard({
+export default function ProductCard({
 
-  course,
+  product,
 
 }: Props) {
 
@@ -44,15 +44,15 @@ export default function CourseCard({
       <div className="relative h-56 overflow-hidden">
 
         <Image
-            src={course.thumbnail}
-            alt={course.title}
+            src={product.thumbnail}
+            alt={product.title}
             fill
             sizes="400px"
             className="object-cover group-hover:scale-105 transition duration-500"
         />
 
         {
-          course.isFeatured && (
+          product.isFeatured && (
 
             <div className="absolute top-4 left-4 flex items-center gap-2 bg-yellow-500 text-black text-xs font-bold px-3 py-2 rounded-full">
 
@@ -74,7 +74,7 @@ export default function CourseCard({
 
         <span className="text-indigo-400 text-sm font-medium">
 
-          {course.category?.title || "General"}
+          {product.category?.title || "General"}
 
         </span>
 
@@ -82,7 +82,7 @@ export default function CourseCard({
 
         <h3 className="mt-3 text-2xl font-bold text-white line-clamp-2">
 
-          {course.title}
+          {product.title}
 
         </h3>
 
@@ -90,7 +90,7 @@ export default function CourseCard({
 
         <p className="mt-4 text-zinc-400 text-sm leading-relaxed line-clamp-3">
 
-          {course.description}
+          {product.description}
 
         </p>
 
@@ -108,14 +108,14 @@ export default function CourseCard({
 
             <p className="text-2xl font-black text-white">
 
-              ${course.price}
+              ${product.price}
 
             </p>
 
           </div>
 
           <Link
-            href={`/courses/${course.slug}`}
+            href={`/products/${product.slug}`}
             className="px-5 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-500 transition font-medium text-white"
           >
 

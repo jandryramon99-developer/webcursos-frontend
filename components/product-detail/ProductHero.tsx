@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Star } from "lucide-react";
-interface course {
+interface product {
   thumbnail: string;
   title: string;
   description: string;
@@ -12,12 +12,12 @@ interface course {
 
 interface Props {
 
-  course: course;
+  product: product;
 }
 
 export default function CourseHero({
 
-  course,
+  product,
 
 }: Props) {
 
@@ -30,8 +30,8 @@ export default function CourseHero({
       <div className="absolute inset-0">
 
         <Image
-          src={course.thumbnail}
-          alt={course.title}
+          src={product.thumbnail}
+          alt={product.title}
           fill
           className="object-cover opacity-20"
         />
@@ -56,20 +56,20 @@ export default function CourseHero({
 
           <span className="inline-flex px-4 py-2 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-sm font-medium">
 
-            {course.category?.title}
+            {product.category?.title}
 
           </span>
 
           {/* FEATURED */}
 
           {
-            course.isFeatured && (
+            product.isFeatured && (
 
               <div className="ml-2 inline-flex gap-2 bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-bold">
 
                 <Star className="w-3.5 h-3.5" />
 
-                Curso destacado
+                Producto destacado
 
               </div>
             )
@@ -79,7 +79,7 @@ export default function CourseHero({
 
           <h1 className="mt-8 text-4xl lg:text-6xl font-black leading-tight tracking-tight">
 
-            {course.title}
+            {product.title}
 
           </h1>
 
@@ -87,7 +87,7 @@ export default function CourseHero({
 
           <p className="mt-8 text-zinc-300 text-md leading-relaxed">
 
-            {course.description}
+            {product.description}
 
           </p>
 

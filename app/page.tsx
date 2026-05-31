@@ -5,13 +5,13 @@ import HeroSection from "@/components/landing/HeroSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
 import CTASection from "@/components/landing/CTASection";
 import Navbar from "@/components/landing/NavBarSection";
-import FeaturedCourses from "@/components/landing/FeaturedCourses";  
-import { getCourses } from "@/services/course.service";
+import FeaturedCourses from "@/components/landing/FeaturedProducts";  
+import { getProducts } from "@/services/product.service";
 
 
 
 export default async function Home() {
-  const courses = await getCourses();
+  const products = await getProducts();
   
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
@@ -20,8 +20,7 @@ export default async function Home() {
 
       <HeroSection />
 
-      {/* Enviamos todos los cursos juntos en una sola sección */}
-      <FeaturedCourses courses={courses} />
+      <FeaturedCourses products={products} />
       <BenefitsSection />
 
       <CTASection />

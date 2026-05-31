@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Swal from "sweetalert2";
 
-interface course {
+interface product {
 
     _id: string;
     title: string;
@@ -14,12 +14,12 @@ interface course {
 
 interface Props {
 
-  course: course;
+  product: product;
 }
 
 export default function CourseSidebar({
 
-  course,
+  product,
 
 }: Props) {
 
@@ -56,8 +56,8 @@ export default function CourseSidebar({
         <div className="aspect-video bg-zinc-800">
 
           <Image
-            src={course.thumbnail}
-            alt={course.title}
+            src={product.thumbnail}
+            alt={product.title}
             width={400}
             height={225}
             className="w-full h-full object-cover"
@@ -81,7 +81,7 @@ export default function CourseSidebar({
 
             <h2 className="mt-2 text-5xl font-black">
 
-              ${course.price}
+              ${product.price}
 
             </h2>
 

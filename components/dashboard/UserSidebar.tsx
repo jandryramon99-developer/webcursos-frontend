@@ -29,13 +29,13 @@ export default function UserSidebar() {
 
         <h1 className="text-3xl font-black text-indigo-500">
 
-          BGU
+          DigiPro
 
         </h1>
 
         <p className="text-zinc-500 text-sm mt-1">
 
-          Learning Platform
+          Plataforma de productos digitales
 
         </p>
 
@@ -56,22 +56,22 @@ export default function UserSidebar() {
         />
 
         <SidebarItem
-          href="/dashboard/my-courses"
+          href="/dashboard/my-products"
           icon={<BookOpen size={20} />}
-          label="Mis Cursos"
+          label="Mis productos"
           active={
             pathname ===
-            "/my-courses"
+            "/my-products"
           }
         />
 
         <SidebarItem
-          href="/courses"
+          href="/products"
           icon={<ShoppingBag size={20} />}
-          label="Explorar Cursos"
+          label="Explorar Productos"
           active={
             pathname ===
-            "/courses"
+            "/products"
           }
         />
 

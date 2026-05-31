@@ -81,7 +81,7 @@ export default function MobileSidebar() {
 
             <h1 className="text-2xl font-black text-indigo-500">
 
-              BGU
+              DigiPro
 
             </h1>
 
@@ -135,12 +135,12 @@ export default function MobileSidebar() {
           />
 
           <MobileItem
-            href="/dashboard/my-courses"
-            label="Mis Cursos"
+            href="/dashboard/my-products"
+            label="Mis productos"
             icon={<BookOpen size={20} />}
             active={
               pathname.includes(
-                "/my-courses"
+                "/my-products"
               )
             }
             onClick={() =>
@@ -149,12 +149,12 @@ export default function MobileSidebar() {
           />
 
           <MobileItem
-            href="/dashboard/courses"
-            label="Explorar Cursos"
+            href="/dashboard/products"
+            label="Explorar Productos"
             icon={<ShoppingBag size={20} />}
             active={
               pathname.includes(
-                "/courses"
+                "/products"
               )
             }
             onClick={() =>

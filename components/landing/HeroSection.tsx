@@ -43,7 +43,7 @@ export default function HeroSection() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
 
             <Link
-              href="/courses"
+              href="/products"
               className="bg-indigo-600 hover:bg-indigo-500 transition px-8 py-4 rounded-2xl font-semibold text-center text-white"
             >
               Explorar productos

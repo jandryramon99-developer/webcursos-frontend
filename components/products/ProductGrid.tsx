@@ -1,6 +1,6 @@
-import CourseCard from "./CourseCard";
+import ProductCard from "./ProductCard";
 
-interface Course {
+interface product {
 
   _id: string;
 
@@ -24,12 +24,12 @@ interface Course {
 
 interface Props {
 
-  courses: Course[];
+  products: product[];
 }
 
-export default function CourseGrid({
+export default function ProductGrid({
 
-  courses,
+  products,
 
 }: Props) {
 
@@ -38,11 +38,11 @@ export default function CourseGrid({
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 
       {
-        courses.map((course) => (
+        products.map((product) => (
 
-          <CourseCard
-            key={course._id}
-            course={course}
+          <ProductCard
+            key={product._id}
+            product={product}
           />
         ))
       }
