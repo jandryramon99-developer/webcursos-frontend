@@ -15,7 +15,7 @@ interface ProductCardProps {
 
   isFeatured: boolean;
 
-  productType: "course" | "download" | "resource";
+  productType: string;
 
   category?: {
 
