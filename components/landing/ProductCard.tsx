@@ -15,6 +15,8 @@ interface ProductCardProps {
 
   isFeatured: boolean;
 
+  productType: "course" | "download" | "resource";
+
   category?: {
 
     _id: string;
@@ -31,7 +33,7 @@ interface ProductCardProps {
 
 }
 
-export default function ProductCard({slug, title, thumbnail, description, isFeatured, topics }: ProductCardProps) {
+export default function ProductCard({slug, title, thumbnail, description, isFeatured, topics, productType }: ProductCardProps) {
   return (
     <div
       className="group bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-indigo-500/40 transition"
@@ -82,7 +84,12 @@ export default function ProductCard({slug, title, thumbnail, description, isFeat
 
           <div className="text-sm text-zinc-500">
 
-            {topics.length || 0} temas
+            {productType === "course"
+            ? `${topics.length} temas`
+            : productType === "download"
+            ? "Descarga disponible"
+            : "Acceso inmediato"
+          }
 
           </div>
 
