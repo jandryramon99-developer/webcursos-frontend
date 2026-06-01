@@ -45,6 +45,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                 slug={p.slug}
                 title={p.title}
                 price={p.price}
+                productType={p.productType}
                 thumbnail={p.thumbnail}
                 description={p.description}
                 isFeatured={p.isFeatured}
