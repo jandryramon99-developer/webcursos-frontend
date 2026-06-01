@@ -54,7 +54,6 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                 productType={p.productType}
                 thumbnail={p.thumbnail}
                 description={p.description}
-                isFeatured={p.isFeatured}
                 topics={p.topics}
               />
 

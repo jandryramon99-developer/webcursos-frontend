@@ -13,8 +13,6 @@ interface ProductCardProps {
 
   price: number;
 
-  isFeatured: boolean;
-
   productType: string;
 
   category?: {
@@ -33,7 +31,7 @@ interface ProductCardProps {
 
 }
 
-export default function ProductCard({slug, title, thumbnail, description, isFeatured, topics, productType }: ProductCardProps) {
+export default function ProductCard({slug, title, thumbnail, description, topics, productType }: ProductCardProps) {
   return (
     <div
       className="group bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-indigo-500/40 transition"
