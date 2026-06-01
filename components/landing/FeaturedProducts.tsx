@@ -37,9 +37,15 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
         {/* GRID */}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products
+            .sort(
+              (a, b) =>
+                new Date(b.createdAt).getTime() -
+                new Date(a.createdAt).getTime()
+            )
+            .slice(0, 6)
+            .map((p) => (
 
-          {products.map(p => (
-            p.isFeatured && (
               <ProductCard
                 key={p._id}
                 slug={p.slug}
@@ -51,8 +57,9 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                 isFeatured={p.isFeatured}
                 topics={p.topics}
               />
-            )
+
           ))}
+          
 
         </div>
 

@@ -58,13 +58,13 @@ export default function ProductCard({slug, title, thumbnail, description, isFeat
 
       <div className="p-6">
 
-        {isFeatured && (
-          <span className="bg-indigo-500/20 text-indigo-300 text-xs px-3 py-1 rounded-full">
+      
+        <span className="bg-indigo-500/20 text-indigo-300 text-xs px-3 py-1 rounded-full">
 
-            Producto Destacado
+          Producto Nuevo
 
-          </span>
-        )}
+        </span>
+        
 
         <h3 className="mt-4 text-2xl font-bold text-white line-clamp-2">
 
