@@ -44,5 +44,7 @@ export interface Product {
   isPublished: boolean;
 
   isFeatured: boolean;
+
+  createdAt: string;
 }
 
